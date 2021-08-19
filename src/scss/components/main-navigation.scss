@@ -1,0 +1,125 @@
+.main-navigation {
+  order: 1;
+  font-family: $headings-font-family;
+
+  @include media-breakpoint-up(lg) {
+    padding: 2.5rem 0;
+    order: 2;
+    position: relative;
+    z-index: 2;
+  }
+
+  .main-navigation-wrapper {
+
+    @include media-breakpoint-up(lg) {
+      @include make-fluid-container(xl);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .main-navigation-logo {
+    width: rem(250px);
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+
+  .main-navigation-links {
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: 1.5rem;
+    }
+  }
+
+  .main-navigation-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      order: 2;
+    }
+  }
+
+
+  .main-navigation-list-item {
+    border-bottom: 1px solid $gray-200;
+
+    &:first-child {
+      border-top: 1px solid $gray-200;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      align-items: center;
+      border: 0;
+      position: relative;
+
+      &:first-child {
+        border: 0;
+      }
+    }
+
+    > a {
+      text-transform: uppercase;
+      font-size: rem(14px);
+      color: $body-color;
+      white-space: nowrap;
+      text-decoration: none;
+      padding: 1rem;
+      display: block;
+      position: relative;
+      transition: color .25s ease-in-out;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      @include media-breakpoint-up(lg) {
+        padding: 0;
+        margin: 0 0 0 3rem;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    &.main-navigation-list-item__cta a {
+
+      @include media-breakpoint-up(lg) {
+        background: $secondary;
+        color: $white;
+        padding: .5rem 1rem;
+        border-radius: .25rem;
+        transition: background-color .25s ease-in-out;
+
+        &:hover {
+          background: darken($secondary, 15%);
+        }
+      }
+    }
+
+    > a:not([href]) {
+      cursor: default;
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:not(:last-child) > a::after {
+        content: '';
+        display: block;
+        background: $gray-400;
+        width: rem(2px);
+        position: absolute;
+        top: .25rem;
+        right: -1.5rem;
+        bottom: .3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@include media-breakpoint-up(md) {
+  .row div:nth-last-child(-n+2) .community-quote {
+    margin-bottom: 0;
+  }
+}
+
+.community-quote {
+  margin-bottom: 4rem;
+  p {
+    font-weight: bold;
+
+    &::before {
+      content: open-quote;
+    }
+    &::after {
+        content: close-quote;
+    }
+  }
+
+  cite {
+    font-size: .9rem;
+    font-style: normal;
+
+    strong {
+      color: $red;
+      display: block;
+      margin-bottom: .5rem;
+      font-size: 1.2rem;
+    }
+  }
+}

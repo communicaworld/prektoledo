@@ -1,0 +1,27 @@
+.hero {
+  background: #e7e7e7 url('../img/banners/prek-toledo-banner-mobile.jpg') center center no-repeat;
+  background-size: cover;
+  padding: 3rem 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: 10rem;
+    background: #e7e7e7 url('../img/banners/prek-toledo-banner.jpg') center center no-repeat;
+    background-size: cover;
+  }
+
+  .hero-heading {
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+      line-height: .8;
+      margin-bottom: 2rem;
+    }
+
+  }
+
+  .hero-description {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
